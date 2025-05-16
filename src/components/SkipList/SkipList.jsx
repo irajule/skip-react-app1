@@ -5,6 +5,7 @@ import { selectSkip } from '../../redux/skips/skipsSlice';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import TouchAppIcon from '@mui/icons-material/TouchApp';
 import SkipDetailModal from '../../modals/SkipDetailModal';
 import getSkipImageUrl from '../../utils/getSkipImage';
 import {
@@ -83,7 +84,7 @@ const SkipList = ({ skips }) => {
                     ) : (
                       <>
                         Select This Skip
-                        <ArrowForwardIcon sx={{ ml: 1 }} />
+                        <TouchAppIcon sx={{ ml: 1 }} />
                       </>
                     )}
                   </SelectButton>

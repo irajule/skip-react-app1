@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+                                      Skip React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Objective
+This project is a simple React application developed as part of a technical test. The main objective was to build upon an existing application and implement improvements where possible.
 
-## Available Scripts
+2. Stack
+React (with Redux) + Material UI for the frontend
+GitHub Actions for CI/CD
+Docker + AWS (EC2) for deployment
 
-In the project directory, you can run:
+3. Accessibility
+  Live url: http://18.191.94.173
+  Docker image: docker pull jules333/skip-react-app
 
-### `npm start`
+4. Approach and improvements
+I began by replicating the structure and behavior of the original page to understand its design and logic. Once that was in place, I identified areas with potential for enhancement. Overall, the existing UI was well-designed, and the improvements I introduced are as follows:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+   a. Modal View: Each skip includes multiple data points. Displaying all of them upfront would clutter the UI. I added a "View Details" feature, which reveals additional information (e.g., price, transport cost, postcode, heavy waste support) when clicked.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    b. Theme Toggle: Users can now switch between light and dark themes using a button located at the top right of the page, catering to individual visual preferences.
 
-### `npm test`
+    c. Sorting: Users can sort skips by size, price, transport cost, and hire period in either ascending or descending order for easier navigation.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    d. Skip Unselection: Selected skips can now be unselected without needing to choose a different one. If a skip is currently selected, the button label changes to "Unselect," allowing the user to deselect it. Alternatively, the skip can be removed via the delete icon at the bottom of the page.
 
-### `npm run build`
+    e. Responsive Design: The layout adapts seamlessly to different screen sizes, ensuring a smooth experience across devices, including laptops and mobile phones.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. Scalability and Modularity
+To ensure the application remains maintainable and scalable as it evolves, I followed several architectural principles:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  a. Redux for State Management: All application state is managed centrally using Redux. This makes state transitions predictable, easier to debug, and more maintainable as the app grows in complexity.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  b. Styled Components for Modular Styling: Styling is handled using styled-components, which encapsulates styles within components. This prevents global CSS conflicts and supports theme switching with minimal overhead.
 
-### `npm run eject`
+  c. Separation of Concerns:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Components are broken down into modular, reusable units such as Modals, Styles, Utils, etc.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Redux logic (actions, reducers, selectors) is separated from UI components.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+API interactions and utility functions are organized into dedicated service/helper files.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The project structure follows a modular pattern, making it easier to scale the app, introduce new features, and maintain the codebase over time.
 
-## Learn More
+These decisions collectively enhance code readability, reusability, and long-term project sustainability.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+6. Deployment
+The application is containerized with Docker. GitHub Actions (configured under .github/workflows) automate the build and push process to Docker Hub. The container is then deployed to an AWS EC2 instance.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+7. How to Use
+  a. Clone and Run Locally:
+     git clone https://github.com/irajule/skip-react-app.git
+     cd skip-react-app
+     npm install
+     npm start
 
-### Code Splitting
+  b. Run with Docker
+     You can also run the app via Docker using:
+     npm run docker
+     
+    Docker-related scripts are defined in package.json.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
