@@ -34,19 +34,4 @@ jobs:
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/skip-react-app:latest .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/skip-react-app:latest
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Deploy to EC2
-        uses: appleboy/ssh-action@v0.1.6
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_SSH_KEY }}
-          script: |
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/skip-react-app:latest
-            docker stop skip-react-app || true
-            docker rm skip-react-app || true
-            docker run -d -p 80:80 --name skip-react-app ${{ secrets.DOCKERHUB_USERNAME }}/skip-react-app:latest
+  
