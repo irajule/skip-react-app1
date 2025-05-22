@@ -31,7 +31,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/skip-react-app:latest .
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/skip-react-app:latest
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/skip-react-app1:latest .
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/skip-react-app1:latest
 
   
