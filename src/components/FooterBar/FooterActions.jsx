@@ -1,7 +1,7 @@
 import React from 'react';
 import { BackButton, ContinueButton, ActionsWrapper } from '../../styles/FooterActions.styles';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { routeMap } from '../../config/routeMap';
+import { routeMap } from '../../routes/routesConfig';
 
 const FooterActions = ({ disableContinue = false }) => {
   const navigate = useNavigate();

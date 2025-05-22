@@ -1,6 +1,6 @@
 import { Box, TextField, Typography, Stack } from '@mui/material';
 import { useState, useEffect } from 'react';
-import FooterActions from '../components/FooterActions'; // Adjust path if needed
+import FooterActions from '../FooterBar/FooterActions'; // Adjust path if needed
 
 function PersonalDetailsForm() {
   const [formData, setFormData] = useState({

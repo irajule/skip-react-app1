@@ -1,5 +1,5 @@
 import React from 'react';
-import PersonalDetailsForm from '../components/PersonalDetailsForm'; // adjust the path if needed
+import PersonalDetailsForm from '../components/PersonalDetails/PersonalDetails';  // adjust the path if needed
 
 const PersonalDetailsPage = () => {
   return <PersonalDetailsForm />;
