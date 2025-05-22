@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   StyledAppBar,
   StyledToolbar,
   StyledContainer,
   NavItemsBox,
   NavItem,
-} from '../../styles/Navbar.styles';
+} from '../../styles/Navbar.styles'; //uses styled components
 
 const Navbar = () => {
   return (
@@ -13,11 +14,18 @@ const Navbar = () => {
       <StyledToolbar disableGutters>
         <StyledContainer maxWidth="lg">
           <NavItemsBox>
-            <NavItem>Postcode</NavItem>
-            <NavItem>Waste Type</NavItem>
-            <NavItem>Select Type</NavItem>
-            <NavItem style={{ color: '#666' }}>Permit Check</NavItem>  {/* Make them a bit gray as the original app. However, more logic would need to be added when user navigates to the next page. */}
-            <NavItem style={{ color: '#666' }}>Payment</NavItem>
+            <NavItem to="/personalDetails" component={Link}>
+              Personal Details
+            </NavItem>
+            <NavItem to="/skips" component={Link}>
+              Skips
+            </NavItem>
+            <NavItem to="/payment" component={Link}>
+              Payment
+            </NavItem>
+            <NavItem to="/contact" component={Link}>
+               Contact
+            </NavItem>
           </NavItemsBox>
         </StyledContainer>
       </StyledToolbar>

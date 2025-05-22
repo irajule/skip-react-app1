@@ -41,7 +41,7 @@ const SkipList = ({ skips }) => {
 
   return (
     <>
-      <Grid container spacing={3}>
+      <Grid container spacing={5}>
         {skips.map((skip) => {
           const isSelected = selected?.id === skip.id;
 

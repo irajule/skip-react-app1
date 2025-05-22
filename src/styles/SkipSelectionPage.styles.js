@@ -93,7 +93,7 @@ export const FooterWrapper = styled(Box)(({ theme }) => ({
 }));
 
 export const SkipListWrapper = styled(Box)(({ theme }) => ({
-  paddingLeft: 45,
+  paddingLeft: 35,
   [theme.breakpoints.down('sm')]: {
     paddingLeft: 0,
   },
